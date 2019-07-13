@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JazugNight.Server", "JazugNight.Server\JazugNight.Server.csproj", "{D4CCD43F-E83A-44A0-8335-8E47488401E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JazugNight.Core", "JazugNight.Core\JazugNight.Core.csproj", "{90CC381B-837A-4C75-A779-0042E68B47AD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4CCD43F-E83A-44A0-8335-8E47488401E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CCD43F-E83A-44A0-8335-8E47488401E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CCD43F-E83A-44A0-8335-8E47488401E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CCD43F-E83A-44A0-8335-8E47488401E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CC381B-837A-4C75-A779-0042E68B47AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CC381B-837A-4C75-A779-0042E68B47AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CC381B-837A-4C75-A779-0042E68B47AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CC381B-837A-4C75-A779-0042E68B47AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
