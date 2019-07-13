@@ -1,0 +1,26 @@
+@page "/create"
+@inject IJazugapiBackup client
+
+<h3>Create</h3>
+
+<EditForm Model="@model" OnSubmit="@OnSubmit">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Name:</label>
+                <InputText @bind-Value="@model.Name" Class="form-control" />
+            </div>
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    Body model = new Body();
+    async void OnSubmit()
+    {
+        await client.PostCreateemployeeAsync(model);
+        model = new Body();
+        StateHasChanged();
+    }
+}

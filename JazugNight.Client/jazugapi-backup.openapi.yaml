@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: jazugapi-backup
+  description: Import from "jazugapi-backup" Function App
+  version: '1.0'
+servers:
+  - url: https://jazug-backup-apis.azure-api.net/jazugapi-backup
+paths:
+  /employees:
+    get:
+      summary: GetEmployees
+      operationId: get-getemployees
+      responses: 
+        200:
+            content:
+                application/json:
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/components/schemas/employee'
+    post:
+      summary: CreateEmployee
+      operationId: post-createemployee
+      requestBody:
+        content:
+            application/json:
+                schema:
+                    type: object
+                    properties:
+                        name: 
+                            type: string
+      responses: { }
+  '/employees/{id}':
+    get:
+      summary: GetEmployeeById
+      operationId: get-getemployeebyid
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: ''
+      responses:
+        200:
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/employee'
+
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+  schemas:
+      employee:
+        type: object
+        properties:
+            id:
+                type: string
+            name:
+                type: string
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

@@ -1,0 +1,28 @@
+﻿@page "/"
+@inject IJazugapiBackup client
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in emps ?? Enumerable.Empty<Employee>())
+        {
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private IList<Employee> emps;
+    protected override async Task OnInitAsync()
+    {
+        emps = await client.GetGetemployeesAsync();
+    }
+}
